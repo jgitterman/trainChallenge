@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Employee Tracker</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+  <!-- Moment.js Reference -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- create jumbotron -->
+  <div class="jumbotron jumbotron-fluid text-center">
+    <h1>Track The Train Times!</h1>
+    <h3>A Comprehensive Directory of train times</h3>
+  </div>
+
+  <!-- create container -->
+  <div class="container">
+
+    <!-- Ccreate row 1 -->
+    <div class="row">
+
+      <!-- create col 1 (row 1) -->
+      <div class="col-md-12">
+
+        <!-- create a table to hold current employees -->
+        <div class="card mb-4">
+          <div class="card-header">Current Train Schedule</div>
+          <div class="card-body table-responsive">
+
+            <table class="table table-hover" id='trainTable'>
+              <thead>
+                <tr>
+                  <th scope="col">Train Name</th>
+                  <th scope="col">Destination</th>
+                  <th scope="col">First Train</th>
+                  <th scope="col">Frequency (min)</th>
+                  <th scope="col">Next Arrival</th>
+                  <th scope="col">Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- end col 1 (row 1) -->
+      </div>
+
+      <!-- end row 1 -->
+    </div>
+
+    <!-- create row 2 -->
+    <div class="row">
+
+      <!-- create col 1 (row 2) -->
+      <div class="col-md-12">
+
+        <!-- create a card to add trains -->
+        <div class="card mb-4">
+          <div class="card-header">Add Employee</div>
+          <div class="card-body">
+
+            <form>
+              <div class="form-group">
+                <label for="trainNameInput">Add a Train</label>
+                <input class="form-control" id="trainNameInput" placeholder="Train Name" type="text">
+              </div>
+              <div class="form-group">
+                <label for="destInput">Destinaton</label>
+                <input class="form-control" id="destInput" placeholder="Train Destination" type="text">
+              </div>
+              <div class="form-group">
+                <label for="startInput">First Train (HH:mm Military Time)</label>
+                <input class="form-control" id="startInput" placeholder="13:45" type="text">
+              </div>
+              <div class="form-group">
+                <label for="freqInput">Frequency (min)</label>
+                <input class="form-control" id="freqInput" placeholder="10" type="text">
+              </div>
+              <button class="btn btn-primary float-right" id="trainBTN">Submit</button>
+            </form>
+
+          </div>
+        </div>
+
+        <!-- end col 1 (row 2) -->
+      </div>
+
+      <!-- end row 2 -->
+    </div>
+
+    <!-- end container -->
+  </div>
+
+
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
